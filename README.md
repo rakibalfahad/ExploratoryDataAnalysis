@@ -12,6 +12,6 @@ Visible at http://rougier.github.io/python-visualization-landscape/landscape-col
 Slides: https://speakerdeck.com/jakevdp/pythons-visualization-landscape-pycon-2017 <br>
 Video: https://www.youtube.com/watch?v=FytuB8nFHPQ <br>
 
-#pyconau
-Visualising data with Python
+# Pyconau
+Visualising data with Python <br>
 https://www.youtube.com/watch?v=6d3Yk7a2qYI
