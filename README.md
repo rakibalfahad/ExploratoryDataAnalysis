@@ -12,6 +12,9 @@ Visible at http://rougier.github.io/python-visualization-landscape/landscape-col
 Slides: https://speakerdeck.com/jakevdp/pythons-visualization-landscape-pycon-2017 <br>
 Video: https://www.youtube.com/watch?v=FytuB8nFHPQ <br>
 
+![landscape-colors](https://user-images.githubusercontent.com/12536006/46749772-167b7200-cc7c-11e8-9671-fd909b06e401.png)
+
+
 # Pyconau
 Visualising data with Python <br>
 https://www.youtube.com/watch?v=6d3Yk7a2qYI
