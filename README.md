@@ -11,3 +11,7 @@ A clickable adaptation the Python Visualization Landscape slide from Jake Vander
 Visible at http://rougier.github.io/python-visualization-landscape/landscape-colors.html <br>
 Slides: https://speakerdeck.com/jakevdp/pythons-visualization-landscape-pycon-2017 <br>
 Video: https://www.youtube.com/watch?v=FytuB8nFHPQ <br>
+
+#pyconau
+Visualising data with Python
+https://www.youtube.com/watch?v=6d3Yk7a2qYI
