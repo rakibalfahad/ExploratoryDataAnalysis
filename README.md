@@ -8,7 +8,6 @@ Reference:
 <br> PyCon 2017(Published on May 20, 2017)
 <br> Speaker: Jake VanderPlas
 <br> [YouTube Link](https://www.youtube.com/watch?v=FytuB8nFHPQ)
-<br> [Slides]({{ site.url }}{{ site.baseurl }}/images/ExploratoryDataAnalysis/PythonVisLandscape.pdf)
 ![landscape-colors](https://user-images.githubusercontent.com/12536006/46749772-167b7200-cc7c-11e8-9671-fd909b06e401.png)
 
 
@@ -17,8 +16,6 @@ Reference:
 <br> PyCon Australia
 <br> Published on Aug 4, 2017
 <br> Speaker: Clare Sloggett
-
 This talk was given at PyCon Australia 2017 which was held from 3-8 August, 2017 in Melbourne, Victoria.
 PyCon Australia is the national conference for users of the Python Programming Language.
-
 <br> [YouTube Link](https://www.youtube.com/watch?v=6d3Yk7a2qYI)
