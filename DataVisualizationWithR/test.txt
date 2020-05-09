@@ -1,0 +1,2 @@
+fname;lname;sex
+Rakib;Fahad;male

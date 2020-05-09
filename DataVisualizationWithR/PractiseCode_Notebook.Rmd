@@ -1,0 +1,662 @@
+---
+title: "R Practice in Notebook"
+output: Practice_notebook
+---
+
+This script is to practice R codes
+Autor 
+Rakib Al-Fahad 
+Department of Electrical and Computer Engineering
+The University of Memphis
+TN-38152
+ralfahad@memphis.edu
+
+'Hi this is a test'
+
+Set git
+https://www.youtube.com/watch?v=hKoSJGWnFFA
+
+
+Download R for MAC
+https://cran.r-project.org/bin/macosx/
+
+Download R for MAC
+https://cran.r-project.org/bin/windows/
+
+
+Download rstudio from website
+https://www.rstudio.com/
+
+To do:
+1. Install R
+2. Install RStudio
+
+
+Let's begin with the Hellow world example
+
+```{r}
+print ('Hellow World')
+```
+
+
+Current directory and change the directory
+```{r}
+getwd()
+setwd("/Users/rakib/LearnR/LearnRCode")
+
+```
+
+Write python code
+
+
+```{python}
+import sys
+import pandas as pd 
+a_py= pd.DataFrame(range(1,10))
+print a_py
+```
+
+Writing Bash code
+```{bash}
+ls
+
+```
+
+Simple test code
+
+```{r}
+a<-5
+b<-10
+sum<-a+b
+sum
+print (sum)
+
+```
+
+You can use paste with print
+```{r}
+print(paste0("Sum is: ", sum))
+#or cat
+cat("Sum is: ", sum)
+```
+
+# R - Data Types
+    Vectors
+    Lists
+    Matrices
+    Arrays
+    Factors
+    Data Frames
+
+```{r}
+v <- TRUE 
+print(class(v))
+
+# as chr
+v <- "TRUE"
+print(class(v))
+
+cat('\n')
+cat('Test logic \n')
+5==6
+cat('\n')
+
+
+v <- 23.5
+print(class(v))
+
+```
+
+
+
+# Vectors
+  When you want to create vector with more than one element, you should use c() function 
+  which means to combine the elements into a vector.
+
+
+```{r}
+# Create a vector.
+apple <- c('red','green',"yellow")
+#apple <- c(2,5,6.3)
+print(apple)
+
+# Get the class of the vector.
+print(class(apple))
+
+```
+
+
+# Lists
+# A list is an R-object which can contain many different types of elements inside 
+# it like vectors, functions and even another list inside it.
+
+```{r}
+# Create a list.
+list1 <- list(c(2,5,3),21.3,sin)
+
+cat('Print a element:\n')
+list1[2]
+
+cat('Print the list.\n')
+print(list1)
+
+```
+
+# Create a matrix.
+```{r}
+cat('byrow: \n')
+M = matrix( c('a','a','b','c','b','a'), nrow = 2, ncol = 3, byrow = TRUE)
+print(M)
+
+cat('\n')
+
+cat('bycol: \n')
+M = matrix( c('a','a','b','c','b','a'), nrow = 2, byrow = FALSE)
+print(M)
+```
+
+
+# Create an array.
+```{r}
+a <- array(c('green','yellow'))
+print (a)
+
+cat('\n change dimention \n\n')
+
+a <- array(c('green','yellow'),dim = c(3,3,2))
+print(a)
+```
+
+# Create the data frame.
+
+```{r}
+BMI <- 	data.frame(
+  gender = c("Male", "Male","Female"), 
+  height = c(152, 171.5, 165), 
+  weight = c(81,93, 78),
+  Age = c(42,38,26)
+)
+print(BMI)
+
+# dim(BMI)
+# head(BMI, n=10)
+# tail(BMI, n=2)
+
+```
+
+##################################### Finding Variables ######################
+
+
+# Assignment using equal operator.
+
+
+```{r}
+var.1 = c(0,1,2,3)           
+```
+
+# Assignment using leftward operator.
+
+```{r}
+var.2 <- c("learn","R")   
+```
+
+# Assignment using rightward operator.   
+
+```{r}
+c(TRUE,1) -> var.3 
+ls() # show all the variable in the enviornment
+# List the variables starting with the pattern "var".
+#print(ls(pattern = "var"))  
+```
+
+
+
+
+##################################### Delete Variables ######################
+```{r}
+rm(var.3)
+print(var.3)
+#rm(list=ls(all=TRUE)) # remove everything from a directory
+
+```
+
+##################################### R - Operators ######################
+
+
+```{r}
+# +,-,*,/
+# %% Give the remainder of the first vector with the second
+22%%7
+
+# %//%	The result of division of first vector with second (quotient)
+22%/%7
+
+#^	The first vector raised to the exponent of second vector
+a<-c(1,2,3)
+a^a
+a^2
+
+#Relational Operators
+# <, >, ==, <=, >=, !=
+#Logical Operators
+# &, | <-or, !<-Not, gives the opposite logical value
+v <- c(3,0,TRUE,2+2i) 
+print(!v)
+
+#Assignment Operators
+x<-5 # Called Left Assignment
+x->z #Called Right Assignment
+print(z)
+```
+
+
+##################################### MATH FUNCTIONS  ######################
+
+```{r}
+ 
+sqrt(x=100)
+ 
+# Get the power you raise the base to get x
+log(x=4, base=2)
+ 
+# Euler's number 2.718 to the power of x
+exp(x=2)
+ 
+# Sum all vector values
+sum(c(1,2,3))
+ 
+# Find the mean (average)
+randD1 = c(1,5,6,7,10,16)
+mean(randD1)
+ 
+# The median (Middle Number or avg of middle 2)
+median(randD1)
+ 
+# Minimum value
+min(randD1)
+ 
+# Maximum value
+max(randD1)
+ 
+# Min and max
+range(randD1)
+ 
+# Rounding
+ceiling(4.5)
+floor(4.5)
+ 
+# Cumulatives
+cat('\n')
+print('Cumulatives')
+cumsum(c(1,2,3))
+cumprod(c(1,2,3))
+cummax(c(7:9, 4:6, 1:3))
+cummin(c(4:6, 1:3, 7:9))
+ 
+# Generating Random samples
+# Flipping a coin 10 times and weigh the probability
+# of the next flip based on the previous
+cat('\n')
+print('Sample')
+sample(0:10,5,replace=T)
+sample(1:10,5,replace=F)
+
+
+```
+
+
+
+
+##################################### R-Decision making  ######################
+
+
+
+```{r}
+a<-10
+if (a > 10){
+  print("Greater")
+}else if (a==10){
+  print ('Equal')
+}else{
+  print ('Less')
+}
+
+#Sort form
+x <- -5
+y <- if(x > 0) 5 else 6
+y
+
+```
+##################################### R - Loops ######################
+
+Create a vector filled with random normal values
+
+
+```{r}
+u1 <- rnorm(30)
+u1
+#d <- density(u1)
+#plot(d, main="Kernel Density of Miles Per Gallon")
+#polygon(d, col="red", border="blue")
+
+```
+
+calculates the square of the first 10 elements of vector u1
+
+```{r}
+
+print("This loop calculates the square of the first 10 elements of vector u1")
+# Initialize `usq`
+usq <- 0
+
+for(i in 1:10) {
+  # i-th element of `u1` squared into `i`-th position of `usq`
+  usq[i] <- u1[i]*u1[i]
+  print(usq[i])
+}
+
+#print(i)
+#print(u1)
+```
+
+print each element
+
+
+```{r}
+for(i in u1) {
+  print(i)
+}
+```
+
+##################################### Function Definition ######################
+
+function_name <- function(arg_1, arg_2, ...) {
+  Function body 
+  }
+
+Create a function that finds x to a user defined power
+
+
+```{r}
+
+power = function(exp=1){
+  function(x){
+    p<-x ^ exp
+    return(p)
+  }
+}
+ 
+cubed <-power()
+cubed
+
+cubed(2)
+#cubed(1:5)
+
+
+```
+
+
+----- EXCEPTION HANDLING -----
+Used to gracefully handle errors
+I handle a division with string error
+
+
+
+```{r}
+divide = function(num1, num2){
+  tryCatch(
+    num1 / num2,
+    error = function(e) {
+      if(is.character(num1) || is.character(num2)){
+        print("Can't Divide with Strings")
+      }
+  })
+}
+ 
+divide(10,'5')
+
+```
+ 
+ # ----- READING WRITING FILES -----
+# Create a text file with headers fname lname sex
+# and the data in a txt file Use `for missing values
+# Save in the same directory as your R file
+ 
+# Supply the file to read, whether the 1st line is 
+# headers, what seperates the data, what is being used
+# for missing data and false because you don't want to
+# convert string vectors to factors
+ 
+# myPeople is a data frame
+
+```{r}
+myPeople = read.table(file='test.txt',
+                      header=T, sep=";",
+                      na.strings="`",
+                      stringsAsFactors=F)
+
+myPeople
+
+# Add another person
+donnaRecord = data.frame(fname="Donna",
+                         lname="Heyward",
+                         sex="female")
+myPeople = rbind(myPeople, donnaRecord)
+myPeople
+
+# Update a record
+myPeople[7,2] = "Smith"
+myPeople
+
+# Update the file by supplying the data.frame,
+# the file to write, seperator, na, whether to
+# quote strings, whether to include row numbers
+
+#write.table(x=myPeople, file='fil_name' # change the file name with extention
+#            sep=" ", na="`",
+#            quote=F, row.names=F)
+
+```
+
+Visualize the tables
+
+```{r}
+# Get 1st 3 records
+head(myPeople, 3)
+ 
+# Get remaining records
+tail(myPeople, 3)
+```
+
+# ----- BASIC PLOTTING -----
+# R provides great plotting tools
+ 
+# Plotting x y coordinates from a matrix
+# 1st 5 are x and 2nd 5 are y
+
+```{r}
+
+xy1 = matrix(data=c(1,2,3,4,5,
+                    1,2,3,4,5), nrow=5, ncol=5)
+
+xy1
+#plot(xy1)
+
+```
+
+Draw a line
+
+```{r}
+x2 = c(1,2,3,4,5)
+y2 = c(1,2,3,4,5)
+#line
+plot(x2, y2, type="l")
+
+# Points and lines
+plot(x2, y2, type="b")
+
+# Points and lines with no space around points,
+# labels, a blue line (Find more with colors())
+plot(x2, y2, type="o", 
+     main="My Plot", xlab="x axis", ylab="y axis",
+     col="red")
+
+# pch (1-25) defines different points
+# lty (1-6) defines different lines
+# xlim defines the max and min x plotting region
+# ylim defines the max and min y plotting region
+plot(x2, y2, type="b", pch=2, lty=2,
+     xlim=c(-8,8), ylim=c(-8,8))
+ 
+# Multiple plots
+plot(x2, y2, type="b")
+ 
+# Adds straight lines at 2 and 4 coordinates
+abline(h=c(2,4), col="red",lty=2)
+ 
+# Draw a 2 segmented lines with starting and ending x
+# and y points
+segments(x0=c(2,4), y0=c(2,2), x1=c(2,4), y1=c(4,4),
+         col="red",lty=2)
+ 
+# Draw an arrow
+arrows(x0=1.5, y0=4.55, x1=2.7, y1=3.3, col="blue")
+ 
+# Print Text
+text(x=1.25, y=4.75, labels="Center")
+
+
+
+```
+
+
+
+PIE CHARTS 
+
+```{r}
+# Simple Pie Chart
+#png(file="food_pref_bar_chart.png")
+slices <- c(10, 12,4, 16, 8)
+lbls <- c("US", "UK", "Australia", "Germany", "France")
+pie(slices, labels = lbls, main="Pie Chart of Countries")
+#dev.on()
+
+```
+
+
+# ----- REGRESSION ANALYSIS -----
+
+```{r}
+
+# Used to study a relationship between 2 separate 
+# pieces of data (What is the relation between batting
+# average and RBIS)
+ 
+# Create relationship model between AVG and RBIs
+mlbPlayers = read.table(file=file.choose(), #file='file_name'
+                        header=T, sep=" ",
+                        na.strings="`",
+                        stringsAsFactors=F)
+ 
+summary(mlbPlayers)
+
+
+# Grab just RBIs and Avg for each player
+# playerData is known as a data frame (Table of Data)
+# We get the stats we want by passing that list in a vector
+playerData = mlbPlayers[,c("RBI","AVG")]
+playerData
+relation = lm(playerData$RBI~playerData$AVG)
+ 
+# Create file 
+#png(file="RBI_AVG_Regression.png")
+ 
+# Plot the chart
+plot(playerData$AVG, playerData$RBI, 
+     main="AVG & RBI Regression", 
+     abline(lm(playerData$RBI~playerData$AVG)),
+     xlab="AVG", ylab="RBIs")
+
+plot(relation) 
+# Save chart
+#dev.off()
+```
+
+
+# ----- MULTIPLE REGRESSION -----
+# Used to study the impact on one variable from numerous 
+# others
+# Estimate RBIs based on other player stats
+
+```{r}
+ 
+playerData2 = mlbPlayers[,c("RBI","AVG","HR","OBP",
+                            "SLG","OPS")]
+ 
+# Create the relationship model
+relation2 = lm(playerData2$RBI ~ playerData2$AVG + 
+                 playerData2$HR + playerData2$OBP +
+                 playerData2$SLG + playerData2$OPS)
+ 
+sprintf("Intercept : %f1.4", coef(relation2)[1])
+ 
+# How stats effect RBIs
+sprintf("AVG : %f1.4", coef(relation2)[2])
+sprintf("HR : %f1.4", coef(relation2)[3])
+sprintf("OBP : %f1.4", coef(relation2)[4])
+sprintf("SLG : %f1.4", coef(relation2)[5])
+sprintf("OPS : %f1.4", coef(relation2)[6])
+ 
+# Calculate expected RBIs based on stats
+# Evan Longoria
+# RBIs   AVG   HR   OBP   SLG   OPS
+# 86     .261  20  .313  .424  .737
+RBIGuess = -5.05 + (372.96 * .261) + (2.56 * 20) +
+  (-5.41 * .313) + (-167.37 * .424)
+RBIGuess
+```
+
+Bonus
+
+Correlation plot
+
+
+```{r}
+library(corrplot)
+head(mtcars)
+M<-cor(mtcars)
+M
+corrplot(M, method="circle")
+
+```
+
+
+Apply functions
+
+The apply() functions form the basis of more complex combinations and helps to perform operations with very few lines of code. More specifically, the family is made up of the 
+
+apply(), lapply() , sapply(), vapply(), mapply(), rapply(), and tapply() functions.
+
+link: https://www.datacamp.com/community/tutorials/r-tutorial-apply-family
+
+```{r}
+# Construct a 5x6 matrix
+X <-matrix(rnorm(30), nrow=5, ncol=6)
+X
+
+# Sum the values of each column with `apply()`
+A1<-apply(X, c(2), sum)
+A1
+# varify 
+sum(X[,1])
+
+# lapply
+x <- list(a = 1:10)
+# compute the list mean for each list element
+B1<-lapply(x, sum)
+print ('Lapply')
+B1
+
+```
+
+
