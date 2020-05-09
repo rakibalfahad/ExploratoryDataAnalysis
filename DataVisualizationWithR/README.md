@@ -5,7 +5,7 @@ Rakib Al -Fahad <br/>
 CVPIA LAB <br/>
 University of Memphis <br/>
 USA <br/>
-ralfahad@memphis.edu <br/>
+rakibalfahad@gmail.com <br/>
 
 This reposatory will help you to learn and paractice some basic R code (intrudectory lavel). 
 
